@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rattings",
+  "info": {
+    "singularName": "ratting",
+    "pluralName": "rattings",
+    "displayName": "ratting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "count": {
+      "type": "integer"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "ratting"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "ratting"
+    }
+  }
+}
